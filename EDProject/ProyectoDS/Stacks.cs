@@ -15,9 +15,7 @@ namespace ProyectoED.ProyectoDS
         
         public bool EstaVacia()
         {
-
             return topePila == 0;
-
         }
 
         public bool Estallena()

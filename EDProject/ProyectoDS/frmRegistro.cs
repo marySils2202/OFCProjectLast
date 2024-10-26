@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Diagnostics.Metrics;
 using System.Drawing;
-
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoED.ProyectoDS;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProyectoDS
 {
@@ -22,31 +24,85 @@ namespace ProyectoDS
     {
         private int cantidad, edad, telefono;
         private Stacks pilas;
+        private ColaSimple simples;
         string nombre, apellido, direccion;
         
         public frmRegistro()
         {
             InitializeComponent();
             pilas = new Stacks();
+            simples = new ColaSimple(cantidad);
         }
 
-
-        private void button8_Click(object sender, EventArgs e)
+        public void Agregar(string nombre, string apellido, string direccion, int telefono, int edad)
         {
-            if (rbPilas.Checked == true)
+            if (rbPilas.Checked== true)
             {
                 rbColasSimples.Enabled = false;
                 rbColasCirculares.Enabled = false;
-            }
-            if (pilas.Estallena())
-            {
-                txtCantidad.Text = string.Empty;
-                txtCantidad.Enabled = true;
-                MessageBox.Show("La pila esta llena", "Aviso", MessageBoxButtons.OK);
 
-                LimpiarControles();
-                return;
+                if (pilas.Estallena())
+                {
+                    txtCantidad.Text = string.Empty;
+                    txtCantidad.Enabled = true;
+                    MessageBox.Show("La pila esta llena", "Aviso", MessageBoxButtons.OK);
+
+                    LimpiarControles();
+                    return;
+                }
+                else
+                {
+                    pilas.employees[pilas.topePila].nombreE = nombre;
+                    pilas.employees[pilas.topePila].apellidoE = apellido;
+                    pilas.employees[pilas.topePila].direccionE = direccion;
+                    pilas.employees[pilas.topePila].telefonoE = telefono;
+                    pilas.employees[pilas.topePila].edadE = edad;
+                    dgEmpleados.Rows.Add(
+                        (pilas.employees[pilas.topePila].nombreE), (pilas.employees[pilas.topePila].apellidoE), (pilas.employees[pilas.topePila].telefonoE),
+                        (pilas.employees[pilas.topePila].direccionE), (pilas.employees[pilas.topePila].edadE)
+                        );
+
+                    pilas.topePila++;
+                    LimpiarControles();
+                }
             }
+            else if (rbColasSimples.Checked == true)
+            {
+                rbPilas.Enabled = false;
+                rbColasCirculares.Enabled = false;
+
+                Employee empleado = new Employee();
+                empleado.nombreE = nombre;
+                empleado.telefonoE = telefono;
+                empleado.apellidoE= apellido;
+                empleado.edadE= edad;
+                empleado.direccionE= direccion;
+
+                if (simples.EstaLlena())
+                {
+                    MessageBox.Show("La cola está llena. No se puede agregar más empleados.");
+                }
+                else
+                {
+                    simples.Agregar(empleado);
+
+                    dgEmpleados.Rows.Add(
+                        simples.employees[simples.final].nombreE,
+                        simples.employees[simples.final].apellidoE,
+                        simples.employees[simples.final].telefonoE,
+                        simples.employees[simples.final].direccionE,
+                        simples.employees[simples.final].edadE
+                    );
+
+                    LimpiarControles();
+                }
+
+            }
+        }
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) ||
                 string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtEdad.Text) || string.IsNullOrEmpty(txtTelefono.Text))
             {
@@ -65,34 +121,10 @@ namespace ProyectoDS
                 MessageBox.Show("Los valores ingresados deben ser números enteros ", "Aviso", MessageBoxButtons.OK);
                 LimpiarControles();
                 return;
-            }
-            //if (Regex.IsMatch(txtTelefono.Text.Trim(), @"^\d{8}$"))
-            //{
-            //    MessageBox.Show("Los valores ingresados deben ser números enteros ", "Aviso", MessageBoxButtons.OK);
-            //    LimpiarControles();
-            //    return;
-            //}
+            }           
 
-            nombre = txtNombre.Text.Trim();
-            apellido = txtApellido.Text.Trim();
-            direccion = txtDireccion.Text.Trim();
-            telefono = int.Parse(txtTelefono.Text.Trim());
-            edad = int.Parse(txtEdad.Text.Trim());
-            pilas.employees[pilas.topePila].nombreE = nombre;
-            pilas.employees[pilas.topePila].apellidoE = apellido;
-            pilas.employees[pilas.topePila].direccionE = direccion;
-            pilas.employees[pilas.topePila].telefonoE = telefono;
-            pilas.employees[pilas.topePila].edadE = edad;
-            dgEmpleados.Rows.Add(
-                (pilas.employees[pilas.topePila].nombreE), (pilas.employees[pilas.topePila].apellidoE), (pilas.employees[pilas.topePila].telefonoE),
-                (pilas.employees[pilas.topePila].direccionE), (pilas.employees[pilas.topePila].edadE)
-                );
-
-            pilas.topePila++;
-
-
-            LimpiarControles();
-
+            Agregar(txtNombre.Text, txtApellido.Text, txtDireccion.Text, int.Parse(txtTelefono.Text), int.Parse(txtEdad.Text));
+            
         }
         public void LimpiarControles()
         {
@@ -104,31 +136,59 @@ namespace ProyectoDS
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (pilas.EstaVacia())
+            if (rbPilas.Checked == true)
             {
-                MessageBox.Show("No se puede eliminar, la pila está vacía.");
-                return;
+                if (pilas.EstaVacia())
+                {
+                    MessageBox.Show("No se puede eliminar, la pila está vacía.");
+                    return;
+                }
+                else
+                {
+                    pilas.topePila--;
+                    pilas.employees[pilas.topePila].nombreE = string.Empty;
+                    pilas.employees[pilas.topePila].apellidoE = string.Empty;
+                    pilas.employees[pilas.topePila].direccionE = string.Empty;
+                    pilas.employees[pilas.topePila].telefonoE = 0;
+                    pilas.employees[pilas.topePila].edadE = 0;
+                    dgEmpleados.Rows[pilas.topePila].Cells[0].Value = null;
+                    dgEmpleados.Rows[pilas.topePila].Cells[1].Value = null;
+                    dgEmpleados.Rows[pilas.topePila].Cells[2].Value = null;
+                    dgEmpleados.Rows[pilas.topePila].Cells[3].Value = null;
+                    dgEmpleados.Rows[pilas.topePila].Cells[4].Value = null;
+                    MessageBox.Show("Registro eliminado correctamenete");
+                }
             }
-            else
+            else if (rbColasSimples.Checked == true)
             {
-                pilas.topePila--;
-                pilas.employees[pilas.topePila].nombreE = string.Empty;
-                pilas.employees[pilas.topePila].apellidoE = string.Empty;
-                pilas.employees[pilas.topePila].direccionE = string.Empty;
-                pilas.employees[pilas.topePila].telefonoE =0;
-                pilas.employees[pilas.topePila].edadE = 0;
-                dgEmpleados.Rows[pilas.topePila].Cells[0].Value = null;
-                dgEmpleados.Rows[pilas.topePila].Cells[1].Value = null;
-                dgEmpleados.Rows[pilas.topePila].Cells[2].Value = null;
-                dgEmpleados.Rows[pilas.topePila].Cells[3].Value = null;
-                dgEmpleados.Rows[pilas.topePila].Cells[4].Value = null;
-                MessageBox.Show("Registro eliminado correctamenete");
+                if (simples.EstaVacia())
+                {
+                    MessageBox.Show("La cola esta vacia, no se pueden eliminar más empleados");
+                }
+                else
+                { 
+                    simples.Eliminar();
 
+                    dgEmpleados.Rows.Clear();
+
+                    for (int i = 0; i < simples.employees.Length; i++)
+                    {
+                        dgEmpleados.Rows.Add(simples.employees[i].nombreE, simples.employees[i].apellidoE, simples.employees[i].telefonoE, simples.employees[i].direccionE, simples.employees[i].edadE);
+                    }
+
+                    MessageBox.Show("Registro eliminado correctamente");
+                }
+                
             }
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            if (!rbPilas.Checked && !rbColasSimples.Checked && !rbColasCirculares.Checked)
+            {
+                MessageBox.Show("Por favor seleccione una estructura antes de crear el arreglo");
+                return;
+            }
             if (string.IsNullOrEmpty(txtCantidad.Text))
             {
                 MessageBox.Show("Debe ingresar la cantidad de empleados", "Aviso", MessageBoxButtons.OK);
@@ -141,12 +201,19 @@ namespace ProyectoDS
             }
             cantidad = int.Parse(txtCantidad.Text.Trim());
 
+            if (rbPilas.Checked == true)
+            {
+                pilas.maximo = cantidad;
+                pilas.employees = new Employee[pilas.maximo];
+                txtCantidad.Enabled = false;
+            }
+            else if (rbColasSimples.Checked == true) 
+            {
+                simples = new ColaSimple(cantidad);
+            }       
 
-            pilas.maximo = cantidad;
-            pilas.employees = new Employee[pilas.maximo];
-            txtCantidad.Enabled = false;
 
-            MessageBox.Show("Arreglo creado", "Aviso", MessageBoxButtons.OK);
+            MessageBox.Show("Arreglo creado correctamente", "Aviso", MessageBoxButtons.OK);
         }
     }
 }
