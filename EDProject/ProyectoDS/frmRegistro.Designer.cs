@@ -34,6 +34,15 @@ namespace ProyectoDS
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            groupBox5 = new GroupBox();
+            label14 = new Label();
+            pictureBox3 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            button1 = new Button();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label15 = new Label();
             txtCantidad = new TextBox();
             groupBox4 = new GroupBox();
             btnInicio = new Button();
@@ -54,7 +63,7 @@ namespace ProyectoDS
             pictureBox4 = new PictureBox();
             pictureBox9 = new PictureBox();
             btnEliminar = new Button();
-            btnNuevo = new Button();
+            btnAgregar = new Button();
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             label13 = new Label();
@@ -83,6 +92,9 @@ namespace ProyectoDS
             label2 = new Label();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -97,6 +109,7 @@ namespace ProyectoDS
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(242, 244, 243);
+            panel1.Controls.Add(groupBox5);
             panel1.Controls.Add(txtCantidad);
             panel1.Controls.Add(groupBox4);
             panel1.Controls.Add(groupBox3);
@@ -104,15 +117,125 @@ namespace ProyectoDS
             panel1.Controls.Add(label1);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-175, -94);
+            panel1.Location = new Point(-175, -93);
             panel1.Name = "panel1";
             panel1.Size = new Size(1783, 863);
             panel1.TabIndex = 4;
             // 
+            // groupBox5
+            // 
+            groupBox5.BackColor = Color.FromArgb(239, 239, 239);
+            groupBox5.Controls.Add(label14);
+            groupBox5.Controls.Add(pictureBox3);
+            groupBox5.Controls.Add(pictureBox5);
+            groupBox5.Controls.Add(button1);
+            groupBox5.Controls.Add(button2);
+            groupBox5.Controls.Add(textBox1);
+            groupBox5.Controls.Add(textBox2);
+            groupBox5.Controls.Add(label15);
+            groupBox5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox5.Location = new Point(934, 228);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(229, 200);
+            groupBox5.TabIndex = 110;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Colas  Circulares";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.FromArgb(242, 244, 243);
+            label14.Location = new Point(599, 107);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 21);
+            label14.TabIndex = 99;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.FromArgb(146, 180, 167);
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(33, 133);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(40, 36);
+            pictureBox3.TabIndex = 62;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.FromArgb(146, 180, 167);
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(30, 51);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(43, 43);
+            pictureBox5.TabIndex = 60;
+            pictureBox5.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(146, 180, 167);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial Rounded MT Bold", 11.89565F);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(21, 125);
+            button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.Yes;
+            button1.Size = new Size(157, 60);
+            button1.TabIndex = 58;
+            button1.Text = "Eliminar";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(146, 180, 167);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial Rounded MT Bold", 11.89565F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(21, 40);
+            button2.Name = "button2";
+            button2.Size = new Size(157, 65);
+            button2.TabIndex = 56;
+            button2.Text = "Agregar";
+            button2.TextAlign = ContentAlignment.MiddleRight;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Century Gothic", 12.22642F);
+            textBox1.Location = new Point(1103, 45);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(203, 25);
+            textBox1.TabIndex = 29;
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Century Gothic", 12.22642F);
+            textBox2.Location = new Point(1103, 101);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(219, 25);
+            textBox2.TabIndex = 23;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(242, 244, 243);
+            label15.Location = new Point(11, 45);
+            label15.Name = "label15";
+            label15.Size = new Size(0, 21);
+            label15.TabIndex = 1;
+            // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(524, 216);
-            txtCantidad.Margin = new Padding(4, 5, 4, 5);
+            txtCantidad.Location = new Point(523, 216);
+            txtCantidad.Margin = new Padding(5);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(39, 27);
             txtCantidad.TabIndex = 109;
@@ -135,7 +258,7 @@ namespace ProyectoDS
             // 
             // btnInicio
             // 
-            btnInicio.Location = new Point(364, 15);
+            btnInicio.Location = new Point(363, 15);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(74, 29);
             btnInicio.TabIndex = 111;
@@ -157,7 +280,7 @@ namespace ProyectoDS
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(242, 244, 243);
-            label9.Location = new Point(599, 106);
+            label9.Location = new Point(599, 107);
             label9.Name = "label9";
             label9.Size = new Size(0, 21);
             label9.TabIndex = 99;
@@ -175,7 +298,7 @@ namespace ProyectoDS
             // 
             textBox7.BorderStyle = BorderStyle.None;
             textBox7.Font = new Font("Century Gothic", 12.22642F);
-            textBox7.Location = new Point(1103, 102);
+            textBox7.Location = new Point(1103, 101);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(219, 25);
             textBox7.TabIndex = 23;
@@ -184,7 +307,7 @@ namespace ProyectoDS
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(242, 244, 243);
-            label11.Location = new Point(11, 46);
+            label11.Location = new Point(11, 45);
             label11.Name = "label11";
             label11.Size = new Size(0, 21);
             label11.TabIndex = 1;
@@ -209,13 +332,14 @@ namespace ProyectoDS
             // rbColasCirculares
             // 
             rbColasCirculares.AutoSize = true;
-            rbColasCirculares.Location = new Point(21, 126);
+            rbColasCirculares.Location = new Point(21, 125);
             rbColasCirculares.Name = "rbColasCirculares";
             rbColasCirculares.Size = new Size(164, 25);
             rbColasCirculares.TabIndex = 102;
             rbColasCirculares.TabStop = true;
             rbColasCirculares.Text = "Colas Circulares";
             rbColasCirculares.UseVisualStyleBackColor = true;
+            rbColasCirculares.CheckedChanged += rbColasCirculares_CheckedChanged;
             // 
             // rbColasSimples
             // 
@@ -227,23 +351,25 @@ namespace ProyectoDS
             rbColasSimples.TabStop = true;
             rbColasSimples.Text = "Colas Simples";
             rbColasSimples.UseVisualStyleBackColor = true;
+            rbColasSimples.CheckedChanged += rbColasSimples_CheckedChanged;
             // 
             // rbPilas
             // 
             rbPilas.AutoSize = true;
-            rbPilas.Location = new Point(23, 42);
+            rbPilas.Location = new Point(23, 43);
             rbPilas.Name = "rbPilas";
             rbPilas.Size = new Size(66, 25);
             rbPilas.TabIndex = 100;
             rbPilas.TabStop = true;
             rbPilas.Text = "Pilas";
             rbPilas.UseVisualStyleBackColor = true;
+            rbPilas.CheckedChanged += rbPilas_CheckedChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(242, 244, 243);
-            label4.Location = new Point(599, 106);
+            label4.Location = new Point(599, 107);
             label4.Name = "label4";
             label4.Size = new Size(0, 21);
             label4.TabIndex = 99;
@@ -261,7 +387,7 @@ namespace ProyectoDS
             // 
             textBox5.BorderStyle = BorderStyle.None;
             textBox5.Font = new Font("Century Gothic", 12.22642F);
-            textBox5.Location = new Point(1103, 102);
+            textBox5.Location = new Point(1103, 101);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(219, 25);
             textBox5.TabIndex = 23;
@@ -273,14 +399,14 @@ namespace ProyectoDS
             groupBox2.Controls.Add(pictureBox4);
             groupBox2.Controls.Add(pictureBox9);
             groupBox2.Controls.Add(btnEliminar);
-            groupBox2.Controls.Add(btnNuevo);
+            groupBox2.Controls.Add(btnAgregar);
             groupBox2.Controls.Add(textBox8);
             groupBox2.Controls.Add(textBox9);
             groupBox2.Controls.Add(label13);
             groupBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(678, 228);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(228, 200);
+            groupBox2.Size = new Size(229, 200);
             groupBox2.TabIndex = 109;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pilas";
@@ -289,7 +415,7 @@ namespace ProyectoDS
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.FromArgb(242, 244, 243);
-            label7.Location = new Point(599, 106);
+            label7.Location = new Point(599, 107);
             label7.Name = "label7";
             label7.Size = new Size(0, 21);
             label7.TabIndex = 99;
@@ -323,7 +449,7 @@ namespace ProyectoDS
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Arial Rounded MT Bold", 11.89565F);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(21, 126);
+            btnEliminar.Location = new Point(21, 125);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.RightToLeft = RightToLeft.Yes;
             btnEliminar.Size = new Size(157, 60);
@@ -333,21 +459,21 @@ namespace ProyectoDS
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // btnNuevo
+            // btnAgregar
             // 
-            btnNuevo.BackColor = Color.FromArgb(146, 180, 167);
-            btnNuevo.FlatAppearance.BorderSize = 0;
-            btnNuevo.FlatStyle = FlatStyle.Flat;
-            btnNuevo.Font = new Font("Arial Rounded MT Bold", 11.89565F);
-            btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(21, 40);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(157, 65);
-            btnNuevo.TabIndex = 56;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.TextAlign = ContentAlignment.MiddleRight;
-            btnNuevo.UseVisualStyleBackColor = false;
-            btnNuevo.Click += button8_Click;
+            btnAgregar.BackColor = Color.FromArgb(146, 180, 167);
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Arial Rounded MT Bold", 11.89565F);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(21, 40);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(157, 65);
+            btnAgregar.TabIndex = 56;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.TextAlign = ContentAlignment.MiddleRight;
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // textBox8
             // 
@@ -362,7 +488,7 @@ namespace ProyectoDS
             // 
             textBox9.BorderStyle = BorderStyle.None;
             textBox9.Font = new Font("Century Gothic", 12.22642F);
-            textBox9.Location = new Point(1103, 102);
+            textBox9.Location = new Point(1103, 101);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(219, 25);
             textBox9.TabIndex = 23;
@@ -371,7 +497,7 @@ namespace ProyectoDS
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(242, 244, 243);
-            label13.Location = new Point(11, 46);
+            label13.Location = new Point(11, 45);
             label13.Name = "label13";
             label13.Size = new Size(0, 21);
             label13.TabIndex = 1;
@@ -426,7 +552,7 @@ namespace ProyectoDS
             dgEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dgEmpleados.GridColor = Color.FromArgb(0, 50, 73);
             dgEmpleados.Location = new Point(30, 236);
-            dgEmpleados.Margin = new Padding(4, 5, 4, 5);
+            dgEmpleados.Margin = new Padding(5);
             dgEmpleados.Name = "dgEmpleados";
             dgEmpleados.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -482,16 +608,16 @@ namespace ProyectoDS
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(356, 42);
-            txtApellido.Margin = new Padding(4, 5, 4, 5);
+            txtApellido.Location = new Point(357, 43);
+            txtApellido.Margin = new Padding(5);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(104, 27);
+            txtApellido.Size = new Size(105, 27);
             txtApellido.TabIndex = 107;
             // 
             // txtTelefono
             // 
             txtTelefono.Location = new Point(581, 40);
-            txtTelefono.Margin = new Padding(4, 5, 4, 5);
+            txtTelefono.Margin = new Padding(5);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(97, 27);
             txtTelefono.TabIndex = 106;
@@ -499,15 +625,15 @@ namespace ProyectoDS
             // txtEdad
             // 
             txtEdad.Location = new Point(581, 100);
-            txtEdad.Margin = new Padding(4, 5, 4, 5);
+            txtEdad.Margin = new Padding(5);
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(97, 27);
             txtEdad.TabIndex = 105;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(127, 42);
-            txtNombre.Margin = new Padding(4, 5, 4, 5);
+            txtNombre.Location = new Point(127, 43);
+            txtNombre.Margin = new Padding(5);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(135, 27);
             txtNombre.TabIndex = 104;
@@ -516,7 +642,7 @@ namespace ProyectoDS
             // 
             txtDireccion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtDireccion.Location = new Point(127, 103);
-            txtDireccion.Margin = new Padding(4, 5, 4, 5);
+            txtDireccion.Margin = new Padding(5);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(333, 52);
             txtDireccion.TabIndex = 103;
@@ -569,7 +695,7 @@ namespace ProyectoDS
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.Location = new Point(371, 176);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 42);
+            pictureBox2.Size = new Size(41, 43);
             pictureBox2.TabIndex = 67;
             pictureBox2.TabStop = false;
             // 
@@ -587,7 +713,7 @@ namespace ProyectoDS
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(242, 244, 243);
-            label10.Location = new Point(7, 182);
+            label10.Location = new Point(7, 181);
             label10.Name = "label10";
             label10.Size = new Size(103, 21);
             label10.TabIndex = 65;
@@ -606,7 +732,7 @@ namespace ProyectoDS
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Century Gothic", 12.22642F);
-            txtPassword.Location = new Point(1103, 102);
+            txtPassword.Location = new Point(1103, 101);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(219, 25);
             txtPassword.TabIndex = 23;
@@ -615,7 +741,7 @@ namespace ProyectoDS
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(242, 244, 243);
-            label2.Location = new Point(11, 46);
+            label2.Location = new Point(11, 45);
             label2.Name = "label2";
             label2.Size = new Size(77, 21);
             label2.TabIndex = 1;
@@ -635,13 +761,17 @@ namespace ProyectoDS
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1633, 771);
+            ClientSize = new Size(1370, 749);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(5);
             Name = "frmRegistro";
             Text = "frmRegistro";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -699,7 +829,7 @@ namespace ProyectoDS
         private TextBox textBox5;
         private PictureBox pictureBox4;
         private Button btnEliminar;
-        private Button btnNuevo;
+        private Button btnAgregar;
         private RadioButton rbColasCirculares;
         private GroupBox groupBox4;
         private Label label9;
@@ -709,5 +839,14 @@ namespace ProyectoDS
         private TextBox txtCantidad;
         private Button btnInicio;
         private Label label12;
+        private GroupBox groupBox5;
+        private Label label14;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox5;
+        private Button button1;
+        private Button button2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label15;
     }
 }
