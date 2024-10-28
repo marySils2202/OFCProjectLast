@@ -38,7 +38,7 @@ namespace ProyectoDS
 
         public void Agregar(string nombre, string apellido, string direccion, int telefono, int edad)
         {
-            if (rbPilas.Checked == true)
+            if (rbPilas.Checked== true)
             {
                 rbColasSimples.Enabled = false;
                 rbColasCirculares.Enabled = false;
