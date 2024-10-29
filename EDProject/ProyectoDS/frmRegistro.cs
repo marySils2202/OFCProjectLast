@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoED;
 using ProyectoED.ProyectoDS;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -23,22 +24,24 @@ namespace ProyectoDS
     };
     public partial class frmRegistro : Form
     {
+        string nombre, apellido, direccion;
         private int cantidad, edad, telefono;
         private Stacks pilas;
         private ColaSimple simples;
         private CircularQueue colascirculares;
-        string nombre, apellido, direccion;
+        private ListaSimple ListaSimple;
 
         public frmRegistro()
         {
             InitializeComponent();
             pilas = new Stacks();
             simples = new ColaSimple(cantidad);
+            ListaSimple = new ListaSimple();
         }
 
         public void Agregar(string nombre, string apellido, string direccion, int telefono, int edad)
         {
-            if (rbPilas.Checked== true)
+            if (rbPilas.Checked == true)
             {
                 rbColasSimples.Enabled = false;
                 rbColasCirculares.Enabled = false;
@@ -220,11 +223,14 @@ namespace ProyectoDS
 
         public void ValidarFormulario()
         {
-            if (string.IsNullOrEmpty(txtCantidad.Text.Trim()))
+            if (rbPilas.Checked || rbColasSimples.Checked || rbColasCirculares.Checked)
             {
-                MessageBox.Show("Debe indicar el tamaño del arreglo", "Aviso", MessageBoxButtons.OK);
-                txtCantidad.Focus();
-                return;
+                if (string.IsNullOrEmpty(txtCantidad.Text.Trim()))
+                {
+                    MessageBox.Show("Debe indicar el tamaño del arreglo", "Aviso", MessageBoxButtons.OK);
+                    txtCantidad.Focus();
+                    return;
+                }
             }
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) ||
                 string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtEdad.Text) || string.IsNullOrEmpty(txtTelefono.Text))
@@ -248,44 +254,44 @@ namespace ProyectoDS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-           
-
-                ValidarFormulario();
-                cantidad = int.Parse(txtCantidad.Text.Trim());
-                colascirculares = new CircularQueue(cantidad);
-
-                if (colascirculares.EstaLlena())
-                {
-                    txtCantidad.Text = string.Empty;
-                    txtCantidad.Enabled = true;
-                    MessageBox.Show("La cola está llena", "Aviso", MessageBoxButtons.OK);
-                    LimpiarControles();
-                    return;
-                }
-
-                Employee empleado = new Employee
-                {
-                    nombreE = txtNombre.Text.Trim(),
-                    apellidoE = txtApellido.Text.Trim(),
-                    direccionE = txtDireccion.Text.Trim(),
-                    telefonoE = int.Parse(txtTelefono.Text.Trim()),
-                    edadE = int.Parse(txtEdad.Text.Trim())
-                };
-
-                colascirculares.Agregar(empleado);
 
 
-                dgEmpleados.Rows.Add(
-                    empleado.nombreE,
-                    empleado.apellidoE,
-                    empleado.telefonoE,
-                    empleado.direccionE,
-                    empleado.edadE
-                );
+            ValidarFormulario();
+            cantidad = int.Parse(txtCantidad.Text.Trim());
+            colascirculares = new CircularQueue(cantidad);
 
+            if (colascirculares.EstaLlena())
+            {
+                txtCantidad.Text = string.Empty;
+                txtCantidad.Enabled = true;
+                MessageBox.Show("La cola está llena", "Aviso", MessageBoxButtons.OK);
                 LimpiarControles();
-
+                return;
             }
+
+            Employee empleado = new Employee
+            {
+                nombreE = txtNombre.Text.Trim(),
+                apellidoE = txtApellido.Text.Trim(),
+                direccionE = txtDireccion.Text.Trim(),
+                telefonoE = int.Parse(txtTelefono.Text.Trim()),
+                edadE = int.Parse(txtEdad.Text.Trim())
+            };
+
+            colascirculares.Agregar(empleado);
+
+
+            dgEmpleados.Rows.Add(
+                empleado.nombreE,
+                empleado.apellidoE,
+                empleado.telefonoE,
+                empleado.direccionE,
+                empleado.edadE
+            );
+
+            LimpiarControles();
+
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -328,6 +334,225 @@ namespace ProyectoDS
                 rbColasSimples.Enabled = false;
                 rbPilas.Enabled = false;
             }
+        }
+
+        private void rbListasSimples_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCantidad.Enabled = false;
+            btnIniciar.Enabled = false;
+            btnAgregarInicio.Enabled = true;
+            btnAgregarFinal.Enabled = true;
+            btnAgregarAntes.Enabled = true;
+            btnAgregarDespues.Enabled = true;
+            txtReferenciaAg.Enabled = true;
+            btnEliminarInicio.Enabled = true;
+            btnEliminarFinal.Enabled = true;
+            btnEliminarX.Enabled = true;
+            btnEliminarAntes.Enabled = true;
+            btnEliminarDespues.Enabled = true;
+            txtReferencia.Enabled = true;
+        }
+
+        private void MostrarListaSimple()
+        {
+            dgEmpleados.Rows.Clear();
+            Nodo actual = ListaSimple.ObtenerCabeza();
+            while (actual != null)
+            {
+                dgEmpleados.Rows.Add(actual.Empleado.nombreE, actual.Empleado.apellidoE, actual.Empleado.telefonoE, actual.Empleado.direccionE, actual.Empleado.edadE);
+                actual = actual.Siguiente;
+            }
+        }
+
+        private void btnAgregarInicio_Click(object sender, EventArgs e)
+        {
+            ValidarFormulario();
+            Employee empleado = new Employee
+            {
+                nombreE = txtNombre.Text.Trim(),
+                apellidoE = txtApellido.Text.Trim(),
+                direccionE = txtDireccion.Text.Trim(),
+                telefonoE = int.Parse(txtTelefono.Text.Trim()),
+                edadE = int.Parse(txtEdad.Text.Trim())
+            };
+
+            ListaSimple.agregarInicio(empleado);
+            MostrarListaSimple();
+            LimpiarControles();
+        }
+
+        private void btnAgregarFinal_Click(object sender, EventArgs e)
+        {
+            ValidarFormulario();
+            Employee empleado = new Employee
+            {
+                nombreE = txtNombre.Text.Trim(),
+                apellidoE = txtApellido.Text.Trim(),
+                direccionE = txtDireccion.Text.Trim(),
+                telefonoE = int.Parse(txtTelefono.Text.Trim()),
+                edadE = int.Parse(txtEdad.Text.Trim())
+            };
+
+            ListaSimple.AgregarFinal(empleado);
+            dgEmpleados.Rows.Add(empleado.nombreE, empleado.apellidoE, empleado.telefonoE, empleado.direccionE, empleado.edadE);
+            LimpiarControles();
+        }
+
+        private void btnEliminarInicio_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.ListaVacia() == true)
+            {
+                MessageBox.Show("La lista esta vacía. No se puede eliminar");
+            }
+            else
+            {
+                ListaSimple.EliminarInicio();
+                MostrarListaSimple();
+            }
+        }
+
+        private void btnEliminarFinal_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.ListaVacia() == true)
+            {
+                MessageBox.Show("La lista esta vacía. No se puede eliminar");
+            }
+            else
+            {
+                ListaSimple.EliminarFinal();
+                MostrarListaSimple();
+            }
+        }
+
+        private void btnEliminarX_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.ListaVacia() == true)
+            {
+                MessageBox.Show("La lista esta vacía. No se puede eliminar");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtReferencia.Text))
+            {
+                MessageBox.Show("Por favor, ingrese el nombre del empleado como referencia para eliminar el registro");
+                txtReferencia.Focus();
+                return;
+            }
+            ListaSimple.Eliminar_X(txtReferencia.Text);
+            MostrarListaSimple();
+            txtReferencia.Text = string.Empty;
+        }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            Nodo resultado = ListaSimple.Busqueda_Desordenada(txtBuscar.Text);
+
+            if (resultado != null)
+            {
+                bool existe = false;
+
+                foreach (DataGridViewRow row in dgEmpleados.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(resultado.Empleado.nombreE, StringComparison.OrdinalIgnoreCase))
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                if (existe)
+                {
+                    dgEmpleados.Rows.Clear();
+                    dgEmpleados.Rows.Add(resultado.Empleado.nombreE, resultado.Empleado.apellidoE, resultado.Empleado.telefonoE, resultado.Empleado.direccionE, resultado.Empleado.edadE);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el elemento: " + txtBuscar.Text);
+            }
+
+            txtBuscar.Text = string.Empty;
+        }
+
+        private void btnAgregarAntes_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtReferenciaAg.Text))
+            {
+                MessageBox.Show("Ingrese una referencia");
+                txtReferenciaAg.Focus();
+                return;
+            }
+            Employee empleado = new Employee
+            {
+                nombreE = txtNombre.Text.Trim(),
+                apellidoE = txtApellido.Text.Trim(),
+                direccionE = txtDireccion.Text.Trim(),
+                telefonoE = int.Parse(txtTelefono.Text.Trim()),
+                edadE = int.Parse(txtEdad.Text.Trim())
+            };
+
+            ListaSimple.AgregarAntes(empleado, txtReferenciaAg.Text);
+            MostrarListaSimple();
+            txtReferenciaAg.Text = string.Empty;
+            LimpiarControles();
+        }
+
+        private void btnAgregarDespues_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtReferenciaAg.Text))
+            {
+                MessageBox.Show("Ingrese una referencia");
+                txtReferenciaAg.Focus();
+                return;
+            }
+            Employee empleado = new Employee
+            {
+                nombreE = txtNombre.Text.Trim(),
+                apellidoE = txtApellido.Text.Trim(),
+                direccionE = txtDireccion.Text.Trim(),
+                telefonoE = int.Parse(txtTelefono.Text.Trim()),
+                edadE = int.Parse(txtEdad.Text.Trim())
+            };
+
+            ListaSimple.AgregarDespues(empleado, txtReferenciaAg.Text);
+            MostrarListaSimple();
+            txtReferenciaAg.Text = string.Empty;
+            LimpiarControles();
+        }
+
+        private void btnEliminarAntes_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.ListaVacia() == true)
+            {
+                MessageBox.Show("La lista esta vacía. No se puede eliminar");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtReferencia.Text))
+            {
+                MessageBox.Show("Por favor, ingrese el nombre del empleado como referencia para eliminar el registro");
+                txtReferencia.Focus();
+                return;
+            }
+            ListaSimple.EliminarAntes(txtReferencia.Text);
+            MostrarListaSimple();
+            txtReferencia.Text = string.Empty;
+        }
+
+        private void btnEliminarDespues_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.ListaVacia() == true)
+            {
+                MessageBox.Show("La lista esta vacía. No se puede eliminar");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtReferencia.Text))
+            {
+                MessageBox.Show("Por favor, ingrese el nombre del empleado como referencia para eliminar el registro");
+                txtReferencia.Focus();
+                return;
+            }
+            ListaSimple.EliminarDespues(txtReferencia.Text);
+            MostrarListaSimple();
+            txtReferencia.Text = string.Empty;
         }
     }
 
