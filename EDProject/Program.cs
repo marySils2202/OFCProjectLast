@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ProyectoED.ProyectoDS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoDS
+namespace ProyectoED
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace ProyectoDS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRegistro());
+            Application.Run(new RegistroOFC());
         }
     }
 }

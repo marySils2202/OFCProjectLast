@@ -1,17 +1,18 @@
 ﻿using ProyectoDS;
+using ProyectoED.ProyectoDS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoED.ProyectoDS
+namespace ProyectoED
 {
     public class ColaSimple
     {
         public Employee[] employees;
-        public int final;  
-        public int frente; 
+        public int final;
+        public int frente;
 
         public ColaSimple(int size)
         {
@@ -52,9 +53,9 @@ namespace ProyectoED.ProyectoDS
                     frente = -1;
                     final = -1;
                 }
-                else 
+                else
                 {
-                    employees.SetValue(null, frente);                    
+                    employees.SetValue(null, frente);
                     frente++;
                 }
             }
