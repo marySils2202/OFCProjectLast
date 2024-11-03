@@ -464,6 +464,200 @@
             btnInicioAgregar.Text = "Inicio";
             btnInicioAgregar.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox6.Controls.Add(groupBox8);
+            groupBox6.Controls.Add(groupBox7);
+            groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox6.Location = new Point(374, 180);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(555, 140);
+            groupBox6.TabIndex = 111;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Listas";
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(btnEliminarDespues);
+            groupBox8.Controls.Add(txtReferencia);
+            groupBox8.Controls.Add(btnEliminarAntes);
+            groupBox8.Controls.Add(btnEliminarX);
+            groupBox8.Controls.Add(btnEliminarFinal);
+            groupBox8.Controls.Add(btnEliminarInicio);
+            groupBox8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox8.Location = new Point(314, 16);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(230, 112);
+            groupBox8.TabIndex = 2;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Eliminar";
+            // 
+            // btnEliminarDespues
+            // 
+            btnEliminarDespues.Enabled = false;
+            btnEliminarDespues.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminarDespues.IconColor = Color.Black;
+            btnEliminarDespues.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarDespues.Location = new Point(107, 50);
+            btnEliminarDespues.Name = "btnEliminarDespues";
+            btnEliminarDespues.Size = new Size(75, 23);
+            btnEliminarDespues.TabIndex = 112;
+            btnEliminarDespues.Text = "Después";
+            btnEliminarDespues.UseVisualStyleBackColor = true;
+            btnEliminarDespues.Click += btnEliminarDespues_Click;
+            // 
+            // txtReferencia
+            // 
+            txtReferencia.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtReferencia.Enabled = false;
+            txtReferencia.Location = new Point(106, 79);
+            txtReferencia.Margin = new Padding(5);
+            txtReferencia.MaximumSize = new Size(105, 23);
+            txtReferencia.MinimumSize = new Size(105, 23);
+            txtReferencia.Name = "txtReferencia";
+            txtReferencia.PlaceholderText = "Referencia";
+            txtReferencia.Size = new Size(105, 23);
+            txtReferencia.TabIndex = 109;
+            // 
+            // btnEliminarAntes
+            // 
+            btnEliminarAntes.Enabled = false;
+            btnEliminarAntes.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminarAntes.IconColor = Color.Black;
+            btnEliminarAntes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarAntes.Location = new Point(16, 50);
+            btnEliminarAntes.Name = "btnEliminarAntes";
+            btnEliminarAntes.Size = new Size(75, 23);
+            btnEliminarAntes.TabIndex = 111;
+            btnEliminarAntes.Text = "Antes";
+            btnEliminarAntes.UseVisualStyleBackColor = true;
+            btnEliminarAntes.Click += btnEliminarAntes_Click;
+            // 
+            // btnEliminarX
+            // 
+            btnEliminarX.Enabled = false;
+            btnEliminarX.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminarX.IconColor = Color.Black;
+            btnEliminarX.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarX.Location = new Point(16, 79);
+            btnEliminarX.Name = "btnEliminarX";
+            btnEliminarX.Size = new Size(75, 23);
+            btnEliminarX.TabIndex = 2;
+            btnEliminarX.Text = "Eliminar X";
+            btnEliminarX.UseVisualStyleBackColor = true;
+            btnEliminarX.Click += btnEliminarX_Click;
+            // 
+            // btnEliminarFinal
+            // 
+            btnEliminarFinal.Enabled = false;
+            btnEliminarFinal.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminarFinal.IconColor = Color.Black;
+            btnEliminarFinal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarFinal.Location = new Point(106, 22);
+            btnEliminarFinal.Name = "btnEliminarFinal";
+            btnEliminarFinal.Size = new Size(75, 23);
+            btnEliminarFinal.TabIndex = 1;
+            btnEliminarFinal.Text = "Final";
+            btnEliminarFinal.UseVisualStyleBackColor = true;
+            btnEliminarFinal.Click += btnEliminarFinal_Click;
+            // 
+            // btnEliminarInicio
+            // 
+            btnEliminarInicio.Enabled = false;
+            btnEliminarInicio.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminarInicio.IconColor = Color.Black;
+            btnEliminarInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarInicio.Location = new Point(16, 22);
+            btnEliminarInicio.Name = "btnEliminarInicio";
+            btnEliminarInicio.Size = new Size(75, 23);
+            btnEliminarInicio.TabIndex = 0;
+            btnEliminarInicio.Text = "Inicio";
+            btnEliminarInicio.UseVisualStyleBackColor = true;
+            btnEliminarInicio.Click += btnEliminarInicio_Click;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(txtReferenciaAg);
+            groupBox7.Controls.Add(btnAgregarDespues);
+            groupBox7.Controls.Add(btnAgregarAntes);
+            groupBox7.Controls.Add(btnAgregarFinal);
+            groupBox7.Controls.Add(btnAgregarInicio);
+            groupBox7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox7.Location = new Point(14, 16);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(283, 112);
+            groupBox7.TabIndex = 1;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Agregar";
+            // 
+            // txtReferenciaAg
+            // 
+            txtReferenciaAg.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtReferenciaAg.Enabled = false;
+            txtReferenciaAg.Location = new Point(99, 52);
+            txtReferenciaAg.Margin = new Padding(5);
+            txtReferenciaAg.Name = "txtReferenciaAg";
+            txtReferenciaAg.PlaceholderText = "Referencia";
+            txtReferenciaAg.Size = new Size(166, 22);
+            txtReferenciaAg.TabIndex = 110;
+            // 
+            // btnAgregarDespues
+            // 
+            btnAgregarDespues.Enabled = false;
+            btnAgregarDespues.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAgregarDespues.IconColor = Color.Black;
+            btnAgregarDespues.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregarDespues.Location = new Point(190, 22);
+            btnAgregarDespues.Name = "btnAgregarDespues";
+            btnAgregarDespues.Size = new Size(75, 23);
+            btnAgregarDespues.TabIndex = 3;
+            btnAgregarDespues.Text = "Después";
+            btnAgregarDespues.UseVisualStyleBackColor = true;
+            btnAgregarDespues.Click += btnAgregarDespues_Click;
+            // 
+            // btnAgregarAntes
+            // 
+            btnAgregarAntes.Enabled = false;
+            btnAgregarAntes.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAgregarAntes.IconColor = Color.Black;
+            btnAgregarAntes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregarAntes.Location = new Point(99, 22);
+            btnAgregarAntes.Name = "btnAgregarAntes";
+            btnAgregarAntes.Size = new Size(75, 23);
+            btnAgregarAntes.TabIndex = 2;
+            btnAgregarAntes.Text = "Antes";
+            btnAgregarAntes.UseVisualStyleBackColor = true;
+            btnAgregarAntes.Click += btnAgregarAntes_Click;
+            // 
+            // btnAgregarFinal
+            // 
+            btnAgregarFinal.Enabled = false;
+            btnAgregarFinal.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAgregarFinal.IconColor = Color.Black;
+            btnAgregarFinal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregarFinal.Location = new Point(7, 52);
+            btnAgregarFinal.Name = "btnAgregarFinal";
+            btnAgregarFinal.Size = new Size(75, 23);
+            btnAgregarFinal.TabIndex = 1;
+            btnAgregarFinal.Text = "Final";
+            btnAgregarFinal.UseVisualStyleBackColor = true;
+            btnAgregarFinal.Click += btnAgregarFinal_Click;
+            // 
+            // btnAgregarInicio
+            // 
+            btnAgregarInicio.Enabled = false;
+            btnAgregarInicio.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAgregarInicio.IconColor = Color.Black;
+            btnAgregarInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregarInicio.Location = new Point(7, 22);
+            btnAgregarInicio.Name = "btnAgregarInicio";
+            btnAgregarInicio.Size = new Size(75, 23);
+            btnAgregarInicio.TabIndex = 0;
+            btnAgregarInicio.Text = "Inicio";
+            btnAgregarInicio.UseVisualStyleBackColor = true;
+            btnAgregarInicio.Click += btnAgregarInicio_Click;
+            // 
             // groupBox5
             // 
             groupBox5.BackColor = Color.FromArgb(239, 239, 239);
@@ -491,7 +685,7 @@
             label14.BackColor = Color.FromArgb(242, 244, 243);
             label14.Location = new Point(685, 146);
             label14.Name = "label14";
-            label14.Size = new Size(0, 21);
+            label14.Size = new Size(0, 17);
             label14.TabIndex = 99;
             // 
             // pictureBox3
@@ -577,7 +771,7 @@
             label15.BackColor = Color.FromArgb(242, 244, 243);
             label15.Location = new Point(13, 63);
             label15.Name = "label15";
-            label15.Size = new Size(0, 21);
+            label15.Size = new Size(0, 17);
             label15.TabIndex = 1;
             // 
             // groupBox2
