@@ -97,6 +97,7 @@
             label12 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgEmpleados).BeginInit();
             groupBox6.SuspendLayout();
@@ -133,53 +134,61 @@
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(618, 157);
+            groupBox1.Location = new Point(541, 118);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(961, 438);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(841, 328);
             groupBox1.TabIndex = 131;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Empleado";
             // 
             // txtBusqueda
             // 
-            txtBusqueda.Location = new Point(241, 182);
+            txtBusqueda.Location = new Point(211, 136);
+            txtBusqueda.Margin = new Padding(3, 2, 3, 2);
             txtBusqueda.Name = "txtBusqueda";
-            txtBusqueda.Size = new Size(407, 27);
+            txtBusqueda.Size = new Size(357, 23);
             txtBusqueda.TabIndex = 167;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(102, 121);
+            txtDireccion.Location = new Point(89, 91);
+            txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(558, 27);
+            txtDireccion.Size = new Size(489, 23);
             txtDireccion.TabIndex = 166;
             // 
             // txtEdad
             // 
-            txtEdad.Location = new Point(784, 121);
+            txtEdad.Location = new Point(686, 91);
+            txtEdad.Margin = new Padding(3, 2, 3, 2);
             txtEdad.Name = "txtEdad";
-            txtEdad.Size = new Size(98, 27);
+            txtEdad.Size = new Size(86, 23);
             txtEdad.TabIndex = 165;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(784, 50);
+            txtTelefono.Location = new Point(686, 38);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(98, 27);
+            txtTelefono.Size = new Size(86, 23);
             txtTelefono.TabIndex = 164;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(376, 53);
+            txtApellido.Location = new Point(329, 40);
+            txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(150, 27);
+            txtApellido.Size = new Size(132, 23);
             txtApellido.TabIndex = 163;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(91, 53);
+            txtNombre.Location = new Point(80, 40);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(134, 27);
+            txtNombre.Size = new Size(118, 23);
             txtNombre.TabIndex = 162;
             // 
             // dgEmpleados
@@ -193,8 +202,8 @@
             dgEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dgEmpleados.GridColor = Color.FromArgb(0, 50, 73);
-            dgEmpleados.Location = new Point(20, 238);
-            dgEmpleados.Margin = new Padding(6, 7, 6, 7);
+            dgEmpleados.Location = new Point(18, 178);
+            dgEmpleados.Margin = new Padding(5, 5, 5, 5);
             dgEmpleados.Name = "dgEmpleados";
             dgEmpleados.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -210,7 +219,7 @@
             dataGridViewCellStyle3.Font = new Font("Lucida Bright", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.Black;
             dgEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgEmpleados.Size = new Size(762, 148);
+            dgEmpleados.Size = new Size(667, 111);
             dgEmpleados.TabIndex = 160;
             // 
             // Column1
@@ -253,9 +262,10 @@
             BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlassPlus;
             BtnBuscar.IconColor = Color.Black;
             BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BtnBuscar.Location = new Point(762, 165);
+            BtnBuscar.Location = new Point(667, 124);
+            BtnBuscar.Margin = new Padding(3, 2, 3, 2);
             BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(61, 49);
+            BtnBuscar.Size = new Size(53, 37);
             BtnBuscar.TabIndex = 161;
             BtnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -263,9 +273,9 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.FromArgb(242, 244, 243);
-            label8.Location = new Point(10, 124);
+            label8.Location = new Point(9, 93);
             label8.Name = "label8";
-            label8.Size = new Size(88, 21);
+            label8.Size = new Size(69, 17);
             label8.TabIndex = 159;
             label8.Text = "Dirección";
             // 
@@ -273,9 +283,9 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.FromArgb(242, 244, 243);
-            label6.Location = new Point(687, 121);
+            label6.Location = new Point(601, 91);
             label6.Name = "label6";
-            label6.Size = new Size(55, 21);
+            label6.Size = new Size(42, 17);
             label6.TabIndex = 158;
             label6.Text = "Edad";
             // 
@@ -283,9 +293,9 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(242, 244, 243);
-            label5.Location = new Point(687, 53);
+            label5.Location = new Point(601, 40);
             label5.Name = "label5";
-            label5.Size = new Size(80, 21);
+            label5.Size = new Size(62, 17);
             label5.TabIndex = 157;
             label5.Text = "Teléfono";
             // 
@@ -293,9 +303,9 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(242, 244, 243);
-            label3.Location = new Point(268, 56);
+            label3.Location = new Point(234, 42);
             label3.Name = "label3";
-            label3.Size = new Size(78, 21);
+            label3.Size = new Size(61, 17);
             label3.TabIndex = 156;
             label3.Text = "Apellido";
             // 
@@ -303,9 +313,9 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(242, 244, 243);
-            label10.Location = new Point(10, 182);
+            label10.Location = new Point(9, 136);
             label10.Name = "label10";
-            label10.Size = new Size(175, 21);
+            label10.Size = new Size(136, 17);
             label10.TabIndex = 155;
             label10.Text = "Buscar por Nombre:";
             // 
@@ -313,9 +323,9 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(242, 244, 243);
-            label2.Location = new Point(10, 59);
+            label2.Location = new Point(9, 44);
             label2.Name = "label2";
-            label2.Size = new Size(77, 21);
+            label2.Size = new Size(61, 17);
             label2.TabIndex = 154;
             label2.Text = "Nombre";
             // 
@@ -325,12 +335,10 @@
             groupBox6.Controls.Add(groupBox9);
             groupBox6.Controls.Add(groupBox3);
             groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox6.Location = new Point(75, 619);
-            groupBox6.Margin = new Padding(3, 4, 3, 4);
+            groupBox6.Location = new Point(327, 135);
             groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(3, 4, 3, 4);
-            groupBox6.Size = new Size(586, 380);
-            groupBox6.TabIndex = 130;
+            groupBox6.Size = new Size(486, 105);
+            groupBox6.TabIndex = 111;
             groupBox6.TabStop = false;
             groupBox6.Text = "Listas";
             // 
@@ -342,9 +350,11 @@
             groupBox9.Controls.Add(btnDespuesEliminar);
             groupBox9.Controls.Add(btnFinalEliminar);
             groupBox9.Controls.Add(btnInicioEliminar);
-            groupBox9.Location = new Point(16, 187);
+            groupBox9.Location = new Point(14, 140);
+            groupBox9.Margin = new Padding(3, 2, 3, 2);
             groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(516, 164);
+            groupBox9.Padding = new Padding(3, 2, 3, 2);
+            groupBox9.Size = new Size(452, 123);
             groupBox9.TabIndex = 4;
             groupBox9.TabStop = false;
             groupBox9.Text = "Eliminar";
@@ -352,54 +362,59 @@
             // txtReferenciaEliminar
             // 
             txtReferenciaEliminar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtReferenciaEliminar.Location = new Point(18, 159);
-            txtReferenciaEliminar.Margin = new Padding(6, 7, 6, 7);
-            txtReferenciaEliminar.MinimumSize = new Size(97, 23);
+            txtReferenciaEliminar.Location = new Point(16, 119);
+            txtReferenciaEliminar.Margin = new Padding(5, 5, 5, 5);
+            txtReferenciaEliminar.MinimumSize = new Size(85, 23);
             txtReferenciaEliminar.Name = "txtReferenciaEliminar";
-            txtReferenciaEliminar.Size = new Size(734, 27);
+            txtReferenciaEliminar.Size = new Size(643, 23);
             txtReferenciaEliminar.TabIndex = 108;
             // 
             // btnEliminar_X
             // 
-            btnEliminar_X.Location = new Point(342, 36);
+            btnEliminar_X.Location = new Point(299, 27);
+            btnEliminar_X.Margin = new Padding(3, 2, 3, 2);
             btnEliminar_X.Name = "btnEliminar_X";
-            btnEliminar_X.Size = new Size(94, 29);
+            btnEliminar_X.Size = new Size(82, 22);
             btnEliminar_X.TabIndex = 5;
             btnEliminar_X.Text = "Eliminar X";
             btnEliminar_X.UseVisualStyleBackColor = true;
             // 
             // btnAntesEliminar
             // 
-            btnAntesEliminar.Location = new Point(82, 74);
+            btnAntesEliminar.Location = new Point(72, 56);
+            btnAntesEliminar.Margin = new Padding(3, 2, 3, 2);
             btnAntesEliminar.Name = "btnAntesEliminar";
-            btnAntesEliminar.Size = new Size(94, 29);
+            btnAntesEliminar.Size = new Size(82, 22);
             btnAntesEliminar.TabIndex = 4;
             btnAntesEliminar.Text = "Antes";
             btnAntesEliminar.UseVisualStyleBackColor = true;
             // 
             // btnDespuesEliminar
             // 
-            btnDespuesEliminar.Location = new Point(262, 74);
+            btnDespuesEliminar.Location = new Point(229, 56);
+            btnDespuesEliminar.Margin = new Padding(3, 2, 3, 2);
             btnDespuesEliminar.Name = "btnDespuesEliminar";
-            btnDespuesEliminar.Size = new Size(94, 29);
+            btnDespuesEliminar.Size = new Size(82, 22);
             btnDespuesEliminar.TabIndex = 3;
             btnDespuesEliminar.Text = "Después";
             btnDespuesEliminar.UseVisualStyleBackColor = true;
             // 
             // btnFinalEliminar
             // 
-            btnFinalEliminar.Location = new Point(181, 36);
+            btnFinalEliminar.Location = new Point(158, 27);
+            btnFinalEliminar.Margin = new Padding(3, 2, 3, 2);
             btnFinalEliminar.Name = "btnFinalEliminar";
-            btnFinalEliminar.Size = new Size(94, 29);
+            btnFinalEliminar.Size = new Size(82, 22);
             btnFinalEliminar.TabIndex = 2;
             btnFinalEliminar.Text = "Final";
             btnFinalEliminar.UseVisualStyleBackColor = true;
             // 
             // btnInicioEliminar
             // 
-            btnInicioEliminar.Location = new Point(18, 36);
+            btnInicioEliminar.Location = new Point(16, 27);
+            btnInicioEliminar.Margin = new Padding(3, 2, 3, 2);
             btnInicioEliminar.Name = "btnInicioEliminar";
-            btnInicioEliminar.Size = new Size(94, 29);
+            btnInicioEliminar.Size = new Size(82, 22);
             btnInicioEliminar.TabIndex = 1;
             btnInicioEliminar.Text = "Inicio";
             btnInicioEliminar.UseVisualStyleBackColor = true;
@@ -411,9 +426,11 @@
             groupBox3.Controls.Add(btnDespuesAgregar);
             groupBox3.Controls.Add(btnFinalAgregar);
             groupBox3.Controls.Add(btnInicioAgregar);
-            groupBox3.Location = new Point(16, 35);
+            groupBox3.Location = new Point(14, 26);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(516, 134);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(452, 100);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Agregar";
@@ -421,268 +438,52 @@
             // txtReferenciaAgregar
             // 
             txtReferenciaAgregar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtReferenciaAgregar.Location = new Point(18, 100);
-            txtReferenciaAgregar.Margin = new Padding(6, 7, 6, 7);
-            txtReferenciaAgregar.MinimumSize = new Size(97, 23);
+            txtReferenciaAgregar.Location = new Point(16, 75);
+            txtReferenciaAgregar.Margin = new Padding(5, 5, 5, 5);
+            txtReferenciaAgregar.MinimumSize = new Size(85, 23);
             txtReferenciaAgregar.Name = "txtReferenciaAgregar";
-            txtReferenciaAgregar.Size = new Size(743, 27);
+            txtReferenciaAgregar.Size = new Size(651, 23);
             txtReferenciaAgregar.TabIndex = 107;
             // 
             // btnAntesAgregar
             // 
-            btnAntesAgregar.Location = new Point(132, 34);
+            btnAntesAgregar.Location = new Point(116, 26);
+            btnAntesAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAntesAgregar.Name = "btnAntesAgregar";
-            btnAntesAgregar.Size = new Size(94, 29);
+            btnAntesAgregar.Size = new Size(82, 22);
             btnAntesAgregar.TabIndex = 4;
             btnAntesAgregar.Text = "Antes";
             btnAntesAgregar.UseVisualStyleBackColor = true;
             // 
             // btnDespuesAgregar
             // 
-            btnDespuesAgregar.Location = new Point(232, 34);
+            btnDespuesAgregar.Location = new Point(203, 26);
+            btnDespuesAgregar.Margin = new Padding(3, 2, 3, 2);
             btnDespuesAgregar.Name = "btnDespuesAgregar";
-            btnDespuesAgregar.Size = new Size(94, 29);
+            btnDespuesAgregar.Size = new Size(82, 22);
             btnDespuesAgregar.TabIndex = 3;
             btnDespuesAgregar.Text = "Después";
             btnDespuesAgregar.UseVisualStyleBackColor = true;
             // 
             // btnFinalAgregar
             // 
-            btnFinalAgregar.Location = new Point(342, 34);
+            btnFinalAgregar.Location = new Point(299, 26);
+            btnFinalAgregar.Margin = new Padding(3, 2, 3, 2);
             btnFinalAgregar.Name = "btnFinalAgregar";
-            btnFinalAgregar.Size = new Size(94, 29);
+            btnFinalAgregar.Size = new Size(82, 22);
             btnFinalAgregar.TabIndex = 2;
             btnFinalAgregar.Text = "Final";
             btnFinalAgregar.UseVisualStyleBackColor = true;
             // 
             // btnInicioAgregar
             // 
-            btnInicioAgregar.Location = new Point(18, 34);
+            btnInicioAgregar.Location = new Point(16, 26);
+            btnInicioAgregar.Margin = new Padding(3, 2, 3, 2);
             btnInicioAgregar.Name = "btnInicioAgregar";
-            btnInicioAgregar.Size = new Size(94, 29);
+            btnInicioAgregar.Size = new Size(82, 22);
             btnInicioAgregar.TabIndex = 0;
             btnInicioAgregar.Text = "Inicio";
             btnInicioAgregar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            //groupBox6.Controls.Add(groupBox8);
-            //groupBox6.Controls.Add(groupBox7);
-            groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox6.Location = new Point(374, 180);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(555, 140);
-            groupBox6.TabIndex = 111;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Listas";
-            // 
-            // groupBox8
-            // 
-            /*
-            groupBox8.Controls.Add(btnEliminarDespues);
-            groupBox8.Controls.Add(txtReferencia);
-            groupBox8.Controls.Add(btnEliminarAntes);
-            groupBox8.Controls.Add(btnEliminarX);
-            groupBox8.Controls.Add(btnEliminarFinal);
-            groupBox8.Controls.Add(btnEliminarInicio);
-            groupBox8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox8.Location = new Point(314, 16);
-            groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(230, 112);
-            groupBox8.TabIndex = 2;
-            groupBox8.TabStop = false;
-            groupBox8.Text = "Eliminar";
-            */
-            // 
-            // btnEliminarDespues
-            //
-            /*
-            btnEliminarDespues.Enabled = false;
-            btnEliminarDespues.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarDespues.IconColor = Color.Black;
-            btnEliminarDespues.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarDespues.Location = new Point(107, 50);
-            btnEliminarDespues.Name = "btnEliminarDespues";
-            btnEliminarDespues.Size = new Size(75, 23);
-            btnEliminarDespues.TabIndex = 112;
-            btnEliminarDespues.Text = "Después";
-            btnEliminarDespues.UseVisualStyleBackColor = true;
-            btnEliminarDespues.Click += btnEliminarDespues_Click;
-            */
-            // 
-            // txtReferencia
-            // 
-            /*
-            txtReferencia.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtReferencia.Enabled = false;
-            txtReferencia.Location = new Point(106, 79);
-            txtReferencia.Margin = new Padding(5);
-            txtReferencia.MaximumSize = new Size(105, 23);
-            txtReferencia.MinimumSize = new Size(105, 23);
-            txtReferencia.Name = "txtReferencia";
-            txtReferencia.PlaceholderText = "Referencia";
-            txtReferencia.Size = new Size(105, 23);
-            txtReferencia.TabIndex = 109;
-            */
-            // 
-            // btnEliminarAntes
-            // 
-            /*
-            btnEliminarAntes.Enabled = false;
-            btnEliminarAntes.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarAntes.IconColor = Color.Black;
-            btnEliminarAntes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarAntes.Location = new Point(16, 50);
-            btnEliminarAntes.Name = "btnEliminarAntes";
-            btnEliminarAntes.Size = new Size(75, 23);
-            btnEliminarAntes.TabIndex = 111;
-            btnEliminarAntes.Text = "Antes";
-            btnEliminarAntes.UseVisualStyleBackColor = true;
-            btnEliminarAntes.Click += btnEliminarAntes_Click;
-            */
-            // 
-            // btnEliminarX
-            // 
-            /*
-            btnEliminarX.Enabled = false;
-            btnEliminarX.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarX.IconColor = Color.Black;
-            btnEliminarX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarX.Location = new Point(16, 79);
-            btnEliminarX.Name = "btnEliminarX";
-            btnEliminarX.Size = new Size(75, 23);
-            btnEliminarX.TabIndex = 2;
-            btnEliminarX.Text = "Eliminar X";
-            btnEliminarX.UseVisualStyleBackColor = true;
-            btnEliminarX.Click += btnEliminarX_Click;
-            */
-            // 
-            // btnEliminarFinal
-            // 
-            /*
-            btnEliminarFinal.Enabled = false;
-            btnEliminarFinal.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarFinal.IconColor = Color.Black;
-            btnEliminarFinal.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarFinal.Location = new Point(106, 22);
-            btnEliminarFinal.Name = "btnEliminarFinal";
-            btnEliminarFinal.Size = new Size(75, 23);
-            btnEliminarFinal.TabIndex = 1;
-            btnEliminarFinal.Text = "Final";
-            btnEliminarFinal.UseVisualStyleBackColor = true;
-            btnEliminarFinal.Click += btnEliminarFinal_Click;
-            */
-            // 
-            // btnEliminarInicio
-            // 
-            /*
-            btnEliminarInicio.Enabled = false;
-            btnEliminarInicio.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarInicio.IconColor = Color.Black;
-            btnEliminarInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarInicio.Location = new Point(16, 22);
-            btnEliminarInicio.Name = "btnEliminarInicio";
-            btnEliminarInicio.Size = new Size(75, 23);
-            btnEliminarInicio.TabIndex = 0;
-            btnEliminarInicio.Text = "Inicio";
-            btnEliminarInicio.UseVisualStyleBackColor = true;
-            btnEliminarInicio.Click += btnEliminarInicio_Click;
-            */
-            // 
-            // groupBox7
-            // 
-            /*
-            groupBox7.Controls.Add(txtReferenciaAg);
-            groupBox7.Controls.Add(btnAgregarDespues);
-            groupBox7.Controls.Add(btnAgregarAntes);
-            groupBox7.Controls.Add(btnAgregarFinal);
-            groupBox7.Controls.Add(btnAgregarInicio);
-            groupBox7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox7.Location = new Point(14, 16);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(283, 112);
-            groupBox7.TabIndex = 1;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Agregar";
-            */
-            // 
-            // txtReferenciaAg
-            // 
-            /*
-            txtReferenciaAg.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtReferenciaAg.Enabled = false;
-            txtReferenciaAg.Location = new Point(99, 52);
-            txtReferenciaAg.Margin = new Padding(5);
-            txtReferenciaAg.Name = "txtReferenciaAg";
-            txtReferenciaAg.PlaceholderText = "Referencia";
-            txtReferenciaAg.Size = new Size(166, 22);
-            txtReferenciaAg.TabIndex = 110;
-            */
-            // 
-            // btnAgregarDespues
-            // 
-            /*
-            btnAgregarDespues.Enabled = false;
-            btnAgregarDespues.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAgregarDespues.IconColor = Color.Black;
-            btnAgregarDespues.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregarDespues.Location = new Point(190, 22);
-            btnAgregarDespues.Name = "btnAgregarDespues";
-            btnAgregarDespues.Size = new Size(75, 23);
-            btnAgregarDespues.TabIndex = 3;
-            btnAgregarDespues.Text = "Después";
-            btnAgregarDespues.UseVisualStyleBackColor = true;
-            btnAgregarDespues.Click += btnAgregarDespues_Click;
-            */
-            // 
-            // btnAgregarAntes
-            // 
-            /*
-            btnAgregarAntes.Enabled = false;
-            btnAgregarAntes.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAgregarAntes.IconColor = Color.Black;
-            btnAgregarAntes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregarAntes.Location = new Point(99, 22);
-            btnAgregarAntes.Name = "btnAgregarAntes";
-            btnAgregarAntes.Size = new Size(75, 23);
-            btnAgregarAntes.TabIndex = 2;
-            btnAgregarAntes.Text = "Antes";
-            btnAgregarAntes.UseVisualStyleBackColor = true;
-            btnAgregarAntes.Click += btnAgregarAntes_Click;
-            */
-            // 
-            // btnAgregarFinal
-            // 
-            /*
-            btnAgregarFinal.Enabled = false;
-            btnAgregarFinal.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAgregarFinal.IconColor = Color.Black;
-            btnAgregarFinal.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregarFinal.Location = new Point(7, 52);
-            btnAgregarFinal.Name = "btnAgregarFinal";
-            btnAgregarFinal.Size = new Size(75, 23);
-            btnAgregarFinal.TabIndex = 1;
-            btnAgregarFinal.Text = "Final";
-            btnAgregarFinal.UseVisualStyleBackColor = true;
-            btnAgregarFinal.Click += btnAgregarFinal_Click;
-            */
-            // 
-            // btnAgregarInicio
-            // 
-            /*
-            btnAgregarInicio.Enabled = false;
-            btnAgregarInicio.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAgregarInicio.IconColor = Color.Black;
-            btnAgregarInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregarInicio.Location = new Point(7, 22);
-            btnAgregarInicio.Name = "btnAgregarInicio";
-            btnAgregarInicio.Size = new Size(75, 23);
-            btnAgregarInicio.TabIndex = 0;
-            btnAgregarInicio.Text = "Inicio";
-            btnAgregarInicio.UseVisualStyleBackColor = true;
-            btnAgregarInicio.Click += btnAgregarInicio_Click;
-            */
             // 
             // groupBox5
             // 
@@ -696,11 +497,9 @@
             groupBox5.Controls.Add(textBox2);
             groupBox5.Controls.Add(label15);
             groupBox5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox5.Location = new Point(83, 519);
-            groupBox5.Margin = new Padding(3, 4, 3, 4);
+            groupBox5.Location = new Point(73, 389);
             groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(3, 4, 3, 4);
-            groupBox5.Size = new Size(372, 92);
+            groupBox5.Size = new Size(326, 69);
             groupBox5.TabIndex = 129;
             groupBox5.TabStop = false;
             groupBox5.Text = "Colas";
@@ -709,7 +508,7 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.FromArgb(242, 244, 243);
-            label14.Location = new Point(685, 146);
+            label14.Location = new Point(599, 110);
             label14.Name = "label14";
             label14.Size = new Size(0, 17);
             label14.TabIndex = 99;
@@ -719,10 +518,9 @@
             pictureBox3.BackColor = Color.FromArgb(146, 180, 167);
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(211, 32);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Location = new Point(185, 24);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(31, 39);
+            pictureBox3.Size = new Size(27, 29);
             pictureBox3.TabIndex = 62;
             pictureBox3.TabStop = false;
             // 
@@ -731,10 +529,9 @@
             pictureBox5.BackColor = Color.FromArgb(146, 180, 167);
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Location = new Point(21, 29);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Location = new Point(18, 22);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(34, 48);
+            pictureBox5.Size = new Size(30, 36);
             pictureBox5.TabIndex = 60;
             pictureBox5.TabStop = false;
             // 
@@ -745,11 +542,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial Rounded MT Bold", 11.89565F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(206, 28);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(180, 21);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.Yes;
-            button1.Size = new Size(130, 49);
+            button1.Size = new Size(114, 37);
             button1.TabIndex = 58;
             button1.Text = "Eliminar";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -762,10 +558,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 11.89565F);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(21, 29);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(18, 22);
             button2.Name = "button2";
-            button2.Size = new Size(143, 48);
+            button2.Size = new Size(125, 36);
             button2.TabIndex = 56;
             button2.Text = "Agregar";
             button2.TextAlign = ContentAlignment.MiddleRight;
@@ -775,27 +570,25 @@
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Century Gothic", 12.22642F);
-            textBox1.Location = new Point(1261, 60);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(1103, 45);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(232, 25);
+            textBox1.Size = new Size(203, 20);
             textBox1.TabIndex = 29;
             // 
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.None;
             textBox2.Font = new Font("Century Gothic", 12.22642F);
-            textBox2.Location = new Point(1261, 135);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Location = new Point(1103, 101);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 25);
+            textBox2.Size = new Size(219, 20);
             textBox2.TabIndex = 23;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.FromArgb(242, 244, 243);
-            label15.Location = new Point(13, 63);
+            label15.Location = new Point(11, 47);
             label15.Name = "label15";
             label15.Size = new Size(0, 17);
             label15.TabIndex = 1;
@@ -812,10 +605,10 @@
             groupBox2.Controls.Add(textBox9);
             groupBox2.Controls.Add(label13);
             groupBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(83, 425);
+            groupBox2.Location = new Point(73, 319);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(372, 87);
+            groupBox2.Size = new Size(326, 65);
             groupBox2.TabIndex = 128;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pilas";
@@ -824,9 +617,9 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.FromArgb(242, 244, 243);
-            label7.Location = new Point(685, 146);
+            label7.Location = new Point(599, 110);
             label7.Name = "label7";
-            label7.Size = new Size(0, 21);
+            label7.Size = new Size(0, 17);
             label7.TabIndex = 99;
             // 
             // pictureBox4
@@ -834,9 +627,10 @@
             pictureBox4.BackColor = Color.FromArgb(146, 180, 167);
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(197, 27);
+            pictureBox4.Location = new Point(172, 20);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(34, 40);
+            pictureBox4.Size = new Size(30, 30);
             pictureBox4.TabIndex = 62;
             pictureBox4.TabStop = false;
             // 
@@ -845,9 +639,10 @@
             pictureBox9.BackColor = Color.FromArgb(146, 180, 167);
             pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
             pictureBox9.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox9.Location = new Point(24, 29);
+            pictureBox9.Location = new Point(21, 22);
+            pictureBox9.Margin = new Padding(3, 2, 3, 2);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(38, 37);
+            pictureBox9.Size = new Size(33, 28);
             pictureBox9.TabIndex = 60;
             pictureBox9.TabStop = false;
             // 
@@ -858,11 +653,10 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Arial Rounded MT Bold", 11.89565F);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(187, 21);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(164, 16);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.RightToLeft = RightToLeft.Yes;
-            btnEliminar.Size = new Size(149, 53);
+            btnEliminar.Size = new Size(130, 40);
             btnEliminar.TabIndex = 58;
             btnEliminar.Text = "Eliminar";
             btnEliminar.TextAlign = ContentAlignment.MiddleLeft;
@@ -875,10 +669,9 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Arial Rounded MT Bold", 11.89565F);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(15, 23);
-            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Location = new Point(13, 17);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(149, 53);
+            btnAgregar.Size = new Size(130, 40);
             btnAgregar.TabIndex = 56;
             btnAgregar.Text = "Agregar";
             btnAgregar.TextAlign = ContentAlignment.MiddleRight;
@@ -888,28 +681,28 @@
             // 
             textBox8.BorderStyle = BorderStyle.None;
             textBox8.Font = new Font("Century Gothic", 12.22642F);
-            textBox8.Location = new Point(1103, 45);
+            textBox8.Location = new Point(965, 34);
+            textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(203, 25);
+            textBox8.Size = new Size(178, 20);
             textBox8.TabIndex = 29;
             // 
             // textBox9
             // 
             textBox9.BorderStyle = BorderStyle.None;
             textBox9.Font = new Font("Century Gothic", 12.22642F);
-            textBox9.Location = new Point(1261, 135);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
+            textBox9.Location = new Point(1103, 101);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(219, 25);
+            textBox9.Size = new Size(192, 20);
             textBox9.TabIndex = 23;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(242, 244, 243);
-            label13.Location = new Point(13, 63);
+            label13.Location = new Point(11, 47);
             label13.Name = "label13";
-            label13.Size = new Size(0, 21);
+            label13.Size = new Size(0, 17);
             label13.TabIndex = 1;
             // 
             // groupBox4
@@ -920,9 +713,11 @@
             groupBox4.Controls.Add(rbListasDobles);
             groupBox4.Controls.Add(rbListasSimples);
             groupBox4.Controls.Add(rbStacks);
-            groupBox4.Location = new Point(83, 258);
+            groupBox4.Location = new Point(73, 194);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(501, 151);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(438, 113);
             groupBox4.TabIndex = 127;
             groupBox4.TabStop = false;
             groupBox4.Text = "Estructuras Lineales";
@@ -930,9 +725,10 @@
             // rbCircularesColas
             // 
             rbCircularesColas.AutoSize = true;
-            rbCircularesColas.Location = new Point(6, 121);
+            rbCircularesColas.Location = new Point(5, 91);
+            rbCircularesColas.Margin = new Padding(3, 2, 3, 2);
             rbCircularesColas.Name = "rbCircularesColas";
-            rbCircularesColas.Size = new Size(134, 24);
+            rbCircularesColas.Size = new Size(109, 19);
             rbCircularesColas.TabIndex = 122;
             rbCircularesColas.TabStop = true;
             rbCircularesColas.Text = "Colas Circulares";
@@ -941,9 +737,10 @@
             // rbSimpleColas
             // 
             rbSimpleColas.AutoSize = true;
-            rbSimpleColas.Location = new Point(6, 79);
+            rbSimpleColas.Location = new Point(5, 59);
+            rbSimpleColas.Margin = new Padding(3, 2, 3, 2);
             rbSimpleColas.Name = "rbSimpleColas";
-            rbSimpleColas.Size = new Size(122, 24);
+            rbSimpleColas.Size = new Size(98, 19);
             rbSimpleColas.TabIndex = 123;
             rbSimpleColas.TabStop = true;
             rbSimpleColas.Text = "Colas Simples";
@@ -951,9 +748,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(179, 110);
+            button3.Location = new Point(157, 82);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(199, 29);
+            button3.Size = new Size(174, 22);
             button3.TabIndex = 113;
             button3.Text = "Limpiar Selección";
             button3.UseVisualStyleBackColor = true;
@@ -961,10 +759,9 @@
             // rbListasDobles
             // 
             rbListasDobles.AutoSize = true;
-            rbListasDobles.Location = new Point(184, 79);
-            rbListasDobles.Margin = new Padding(3, 4, 3, 4);
+            rbListasDobles.Location = new Point(161, 59);
             rbListasDobles.Name = "rbListasDobles";
-            rbListasDobles.Size = new Size(117, 24);
+            rbListasDobles.Size = new Size(93, 19);
             rbListasDobles.TabIndex = 104;
             rbListasDobles.TabStop = true;
             rbListasDobles.Text = "Listas Dobles";
@@ -973,10 +770,9 @@
             // rbListasSimples
             // 
             rbListasSimples.AutoSize = true;
-            rbListasSimples.Location = new Point(179, 37);
-            rbListasSimples.Margin = new Padding(3, 4, 3, 4);
+            rbListasSimples.Location = new Point(157, 28);
             rbListasSimples.Name = "rbListasSimples";
-            rbListasSimples.Size = new Size(122, 24);
+            rbListasSimples.Size = new Size(98, 19);
             rbListasSimples.TabIndex = 103;
             rbListasSimples.TabStop = true;
             rbListasSimples.Text = "Listas Simples";
@@ -985,9 +781,10 @@
             // rbStacks
             // 
             rbStacks.AutoSize = true;
-            rbStacks.Location = new Point(6, 37);
+            rbStacks.Location = new Point(5, 28);
+            rbStacks.Margin = new Padding(3, 2, 3, 2);
             rbStacks.Name = "rbStacks";
-            rbStacks.Size = new Size(60, 24);
+            rbStacks.Size = new Size(49, 19);
             rbStacks.TabIndex = 120;
             rbStacks.TabStop = true;
             rbStacks.Text = "Pilas";
@@ -998,16 +795,18 @@
             panel2.Controls.Add(btnInicio);
             panel2.Controls.Add(txtCantidad);
             panel2.Controls.Add(label12);
-            panel2.Location = new Point(83, 166);
+            panel2.Location = new Point(73, 124);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(504, 76);
+            panel2.Size = new Size(441, 57);
             panel2.TabIndex = 126;
             // 
             // btnInicio
             // 
-            btnInicio.Location = new Point(367, 21);
+            btnInicio.Location = new Point(321, 16);
+            btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(94, 29);
+            btnInicio.Size = new Size(82, 22);
             btnInicio.TabIndex = 113;
             btnInicio.Text = "Iniciar";
             btnInicio.UseVisualStyleBackColor = true;
@@ -1015,18 +814,19 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(257, 25);
+            txtCantidad.Location = new Point(225, 19);
+            txtCantidad.Margin = new Padding(3, 2, 3, 2);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(94, 27);
+            txtCantidad.Size = new Size(83, 23);
             txtCantidad.TabIndex = 111;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.BackColor = Color.FromArgb(242, 244, 243);
-            label12.Location = new Point(9, 26);
+            label12.Location = new Point(8, 20);
             label12.Name = "label12";
-            label12.Size = new Size(242, 20);
+            label12.Size = new Size(190, 15);
             label12.TabIndex = 110;
             label12.Text = "Cantidad de empleados a registrar:";
             // 
@@ -1036,9 +836,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 21.91304F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(576, 67);
+            label1.Location = new Point(504, 50);
             label1.Name = "label1";
-            label1.Size = new Size(330, 44);
+            label1.Size = new Size(269, 37);
             label1.TabIndex = 124;
             label1.Text = "Nuevo Empleado";
             // 
@@ -1047,18 +847,32 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(434, 32);
+            pictureBox1.Location = new Point(380, 24);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(136, 107);
+            pictureBox1.Size = new Size(119, 80);
             pictureBox1.TabIndex = 125;
             pictureBox1.TabStop = false;
             // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(664, 473);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(75, 23);
+            iconButton1.TabIndex = 132;
+            iconButton1.Text = "iconButton1";
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
             // RegistroOFC
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1610, 1055);
+            ClientSize = new Size(1199, 562);
+            Controls.Add(iconButton1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox6);
             Controls.Add(groupBox5);
@@ -1067,6 +881,7 @@
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "RegistroOFC";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistroOFC";
@@ -1164,5 +979,6 @@
         private Label label3;
         private Label label10;
         private Label label2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
